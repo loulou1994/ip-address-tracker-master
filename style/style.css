@@ -1,0 +1,248 @@
+/* custom properties */
+:root{
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --clr-white: hsl(0, 0%, 100%);
+  --main-font: 'Rubik', sans-serif;
+  --ft-100: 0.75rem;
+  --ft-200: 0.9375rem;
+  --ft-300: 1rem;
+  --ft-400: 1.125rem;
+  --ft-500: 1.25rem;
+  --ft-600: 1.375rem;
+}
+
+@media (min-width: 45em){
+  :root{
+    --ft-100: 0.9375rem;
+    --ft-200: 1rem;
+    --ft-400: 1.375rem;
+    --ft-500: 1.5rem;
+    --ft-600: 1.75rem;
+    --ft-700: 2rem;
+  }
+}
+
+/*       Modern css reset by Piccalil      */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  padding: 0;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+}
+
+/* general Styles */
+body{
+  font-family: var(--main-font);
+  font-size: var(--ft-300);
+  color: var(--very-dark-gray);
+}
+
+h1,
+h2{
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* ****************  Utility Classes  ****************  */
+
+.flex{
+  display: flex;
+  gap: var(--gap, 0);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 0);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.pd-top{
+  padding-top: 1.5rem;
+}
+
+/****************** Body Section *******************/
+
+/* first section */
+
+.search-section {
+  /* height: clamp(17.4375rem, 16.25rem + 2.8vw, 18.75rem); */
+  height: 42vh;
+  background: url("../images/pattern-bg.png") center/cover no-repeat;
+  text-align: center;
+}
+
+h1{
+  font-size: var(--ft-500);
+  color: var(--clr-white);
+}
+
+.input-container {
+  width: min(31.25rem, 85%);
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.input-container > input {
+  flex: 1;
+  border: 0;
+  padding: .7rem 1.2rem;
+  font-size: var(--ft-300);
+  color: var(--very-dark-gray);
+  border-top-left-radius: .6rem;
+  border-bottom-left-radius: .6rem;
+}
+
+.input-container > button {
+  border: 0;
+  padding: .7rem 1.2rem;
+  border-top-right-radius: .6rem;
+  border-bottom-right-radius: .6rem;
+  background-color: var(--very-dark-gray);
+  cursor: pointer;
+}
+
+#search-instruction{
+  margin-top: 0.75rem;
+  font-size: var(--ft-200);
+  color: #ccc;
+}
+
+/* Second section */
+
+.ip-address-map {
+  position: relative;
+  height: 58vh;
+}
+
+.ip-data-container {
+  --gap: 1rem;
+  flex-direction: column;
+  width: min(64.375rem, 85%);
+  padding: 1.5rem 1rem;
+  font-size: var(--ft-400);
+  font-weight: 500;
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+  border-radius: .6rem;
+  text-align: center;
+  background-color: var(--clr-white);
+}
+
+h2 {
+  font-size: var(--ft-100);
+  color: var(--dark-gray);
+}
+
+#map {
+  position: relative;
+  height: 100%;
+}
+
+/* .leaflet-map-pane{
+  transform: translate3d(-1px, 109.986px, 0px)!important;
+} */
+
+/*  Tablet and desktop layout */
+
+@media (min-width: 45em){
+  .search-section {
+    height: 37vh;
+  }
+
+  .ip-address-map {
+    height: 63vh;
+  }
+
+  .ip-data-container {
+    padding: 2rem 1.5rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+    top: -15%;
+    text-align: left;
+  }
+
+  .ip-data-container > div {
+    --flow-space: 0.5rem;
+  }
+
+  .ip-data-container > *:where(:not(:first-child)) {
+    border-left: 1px solid var(--dark-gray);
+    padding-left: 1.25rem;
+  }
+}

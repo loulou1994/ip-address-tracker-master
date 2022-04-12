@@ -1,0 +1,21 @@
+{
+  "name": "ip-address-tracker-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.html",
+  "scripts": {
+    "postCssBuild": "postcss ./style/style.css -u postcss-preset-env cssnano --dir ./dist/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^5.1.5",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "postcss-preset-env": "^7.4.3"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
