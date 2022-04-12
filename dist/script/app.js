@@ -19,7 +19,7 @@ inputField.addEventListener("keydown", (e) => {
 
 inputBtn.addEventListener("click", () => {
   const value = inputField.value;
-  checkIp(value) && getAddressdata(value);
+  checkIp(value) && processIpAddress(value);
 });
 
 function checkIp(ipAddress) {
