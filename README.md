@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/loulou1994/ip-address-tracker-master)
-- Live Site URL: [Add live site URL here](https://loulou1994.github.io/ip-address-tracker-master/)
+- Live Site URL: [Site here](https://loulou1994.github.io/ip-address-tracker-master/)
 
 ## My process
 
